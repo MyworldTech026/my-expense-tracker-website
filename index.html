@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spendwise — Expense Tracker</title>
+  <link rel="stylesheet" href="expense tracker.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">$</span>
+        <span class="brand-name">Spendwise</span>
+      </div>
+
+      <div class="balance-card">
+        <div class="balance-label">Total Spent</div>
+        <div class="balance-amount js-total">$0.00</div>
+      </div>
+
+      <!-- ADD FORM -->
+      <form class="add-form" id="expense-form">
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="js-description form-input description-form" placeholder="e.g. Grocery shopping" />
+        </div>
+        <div class="form-group">
+          <label>Amount ($)</label>
+          <input type="number" class="js-amount form-input" placeholder="0.00" min="0" />
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select class="js-category form-select">
+            <option value="">Select category</option>
+            <option value="Food🍔">🍔 Food</option>
+            <option value="Transport🚗">🚗 Transport</option>
+            <option value="Entertainment🎬">🎬 Entertainment</option>
+            <option value="Shopping🛍️">🛍️ Shopping</option>
+            <option value="Health💊">💊 Health</option>
+            <option value="Bills💡">💡 Bills</option>
+            <option value="Other📦">📦 Other</option>
+          </select>
+        </div>
+        <div class="js-form-error form-error hidden"></div>
+        <button type="submit" class="add-btn">Add Expense</button>
+      </form>
+
+     
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <div class="main-header">
+        <h1 class="page-title">My Expenses</h1>
+        <div class="filter-wrap">
+          <select class="js-filter filter-select">
+            <option value="All">All Categories</option>
+            <option value="Food🍔">🍔 Food</option>
+            <option value="Transport🚗">🚗 Transport</option>
+            <option value="Entertainment🎬">🎬 Entertainment</option>
+            <option value="Shopping🛍️">🛍️ Shopping</option>
+            <option value="Health💊">💊 Health</option>
+            <option value="Bills💡">💡 Bills</option>
+            <option value="Other📦">📦 Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- CHART -->
+      <div class="chart-section">
+        <div class="chart-wrap">
+          <canvas class="js-chart" id="expense-chart"></canvas>
+          <div class="js-no-chart no-chart"></div>
+        </div>
+        <div class="js-legend chart-legend"></div>
+      </div>
+
+      <!-- EXPENSES LIST -->
+      <div class="js-expenses-list expenses-list">
+
+        
+      </div>
+
+      <div class="js-empty empty-state hidden">
+        <div class="empty-icon">💸</div>
+        <div class="empty-text">No expenses yet. Add one!</div>
+      </div>
+
+    </main>
+
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="expense tracker.js"></script>
+</body>
+</html>
