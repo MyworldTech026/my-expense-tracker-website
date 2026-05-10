@@ -14,7 +14,7 @@ const legendChart = document.querySelector('.js-legend')
 
 
 //Read Data From localStorage
-let expenseTracker = JSON.parse(localStorage.getItem('expenses') || [])
+let expenseTracker = JSON.parse(localStorage.getItem('expenses')) || []
 
 let myChart=null
 
